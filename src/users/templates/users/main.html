@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+    Users info
+{% endblock title %}
+
+{% block content %}
+    {% for user in object_list %}
+        <div style="padding: 1rem;" class="user">
+            {{ user }} 
+            <a href="{% url 'user_pdf_view' user.id%}" target="_blank"><button class="btn btn-primary">Download pdf</button></a>
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock content %}
